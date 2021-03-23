@@ -4,8 +4,9 @@ import './main-menu.style.scss'
 import shirts from '../../assets/shirts.jpg'
 import pants from '../../assets/pants.jpg'
 import hats from '../../assets/hats.jpg'
-import shoes from '../../assets/shoes.jpg'
-import jackets from '../../assets/jackets.jpg'
+import male from '../../assets/male.jpg'
+import female from '../../assets/female.jpg'
+
 
 class MainMenu extends React.Component {
 
@@ -31,14 +32,16 @@ class MainMenu extends React.Component {
                 id: 14
             },
             {
-                title: 'jackets',
-                imgName: jackets,
-                id: 12
+                title: 'men',
+                imgName: male,
+                id: 12,
+                size:'large'
             },
             {
-                title: 'shoes',
-                imgName: shoes,
-                id: 6
+                title: 'women',
+                imgName: female,
+                id: 6,
+                size: 'large'
             }
             ]
 
@@ -49,9 +52,9 @@ class MainMenu extends React.Component {
     render() {
         return (
             <div className="main-menu">
-                {this.state.sections.map(({ title, id, imgName }) => {
+                {this.state.sections.map(({ title, id, imgName,size }) => {
                     return (
-                        <MenuItem imgName={imgName} title={title} key={id} />
+                        <MenuItem size={size} imgName={imgName} title={title} key={id} />
                     )
                 })}
             </div>
