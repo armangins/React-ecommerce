@@ -18,30 +18,40 @@ class MainMenu extends React.Component {
             sections: [{
                 title: 'pants',
                 imgName: pants,
-                id: 1
+                id: 1,
+                linkURL:''
             },
 
             {
                 title: 'shirts',
                 imgName: shirts,
-                id: 2
+                id: 2,
+                linkURL:'',
+
+                
             },
             {
                 title: 'hats',
                 imgName: hats,
-                id: 14
+                id: 14,
+                linkURL:'hats',
+
             },
             {
                 title: 'men',
                 imgName: male,
                 id: 12,
-                size:'large'
+                size:'large',
+                linkURL:'',
+
             },
             {
                 title: 'women',
                 imgName: female,
                 id: 6,
-                size: 'large'
+                size: 'large',
+                linkURL:'',
+
             }
             ]
 
@@ -52,9 +62,9 @@ class MainMenu extends React.Component {
     render() {
         return (
             <div className="main-menu">
-                {this.state.sections.map(({ title, id, imgName,size }) => {
+                {this.state.sections.map(({ id, ...sectionProps }) => {
                     return (
-                        <MenuItem size={size} imgName={imgName} title={title} key={id} />
+                        <MenuItem key={id} {...sectionProps} />
                     )
                 })}
             </div>
