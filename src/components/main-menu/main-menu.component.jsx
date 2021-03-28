@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItem from '../menu-item/menu-item.component'
-import './main-menu.style.scss'
+import './main-menu.styles.scss'
 import shirts from '../../assets/shirts.jpg'
 import pants from '../../assets/pants.jpg'
 import hats from '../../assets/hats.jpg'
