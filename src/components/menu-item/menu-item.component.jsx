@@ -2,9 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import './menu-item.styles.scss'
 
-const clickHandler = ()=>{
-    
-}
+
 
 const MenuItem = ({ title, imgName, size , history ,linkURL,match}) => {
 
@@ -17,7 +15,6 @@ const MenuItem = ({ title, imgName, size , history ,linkURL,match}) => {
             </div>
         </div>
     )
-
 }
 
 export default withRouter(MenuItem) ;

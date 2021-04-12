@@ -1,9 +1,11 @@
 import React from "react";
-import HomePage from "./Pages/homepage/homepage.component";
 import "./App.css";
 import { Route, Switch } from "react-router";
-import ShopPage from "./Pages/shop-page/shop-page.component";
-import Header from './components/header-component/header.component'
+
+import HomePage from "./Pages/homePage/homepage.component";
+import ShopPage from "./Pages/shopPage/shop-page.component";
+import Header from './components/header-component/header.component';
+import AuthPage from './Pages/authPage/auth.component';
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route  path="/shop" component={ShopPage} />
+        <Route  path="/auth" component={AuthPage} />
       </Switch>
     </div>
   );
