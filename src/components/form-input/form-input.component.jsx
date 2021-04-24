@@ -3,7 +3,6 @@ import './form-input.styles.scss';
 
 
 const FormInput = ({ handleChange, label, ...otherProps }) => {
-    console.log(otherProps)
     return (
 
         <div className="group">
@@ -16,13 +15,10 @@ const FormInput = ({ handleChange, label, ...otherProps }) => {
                             {label}
                         </label>
                     )
-
                     : null
             }
         </div>
     )
-
-
 }
 
 export default FormInput
