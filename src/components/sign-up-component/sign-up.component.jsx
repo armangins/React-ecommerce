@@ -18,34 +18,52 @@ class SignUp extends React.Component {
         })
     }
 
-handleSubmit = async event=>{
+    handleSubmit = async event => {
 
-    const { displayName , email, password , confirmPassword} = this.state;
+        const { displayName, email, password, confirmPassword } = this.state;
 
-    event.preventDefault();
+        event.preventDefault();
 
-    if(password != confirmPassword){
-        alert("passwords didn't match");
-        return;
+        if (password != confirmPassword) {
+            alert("passwords didn't match");
+            return;
+        }
+
+        try {
+
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+            createUserDoc(user, { displayName });
+
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+            })
+
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
-    try {
 
-        const { user } = await auth.createUserWithEmailAndPassword(emai,password);
-        
-    } catch (error) {
-        
+    handleChange = event=>{
+
+        const { name,value }  = event.target;
+
+        this.setState({
+            [name]:value
+        })
     }
-     
-
-}
 
 
     render() {
 
-        const { displayName , email, password , confirmPassword} = this.state;
+        const { displayName, email, password, confirmPassword } = this.state;
 
-        return(
+        return (
             <div className="signUp">
                 <h1>I dont have an account</h1>
                 <span>Sign up with email and password</span>
@@ -58,7 +76,7 @@ handleSubmit = async event=>{
                         label="display name"
                         required
                     />
-          
+
 
                     <FormInput
                         onChange={this.handleChange}
@@ -68,7 +86,7 @@ handleSubmit = async event=>{
                         label="email"
                         required
                     />
-    
+
 
                     <FormInput
                         onChange={this.handleChange}
@@ -78,7 +96,7 @@ handleSubmit = async event=>{
                         label="password"
                         required
                     />
-           
+
 
                     <FormInput
                         onChange={this.handleChange}
@@ -88,8 +106,8 @@ handleSubmit = async event=>{
                         label="confrim password"
                         required
                     />
-       <CustomButton type="submit">
-Sign Up
+                    <CustomButton type="submit">
+                        Sign Up
        </CustomButton>
                 </form>
             </div>
