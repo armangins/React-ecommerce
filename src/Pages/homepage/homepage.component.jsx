@@ -7,5 +7,4 @@ const homePage = () => (
         <MainMenu />
     </div>
 )
-
 export default homePage

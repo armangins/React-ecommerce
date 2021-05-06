@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../menu-item/menu-item.component'
+import MenuItem from './menu-item/menu-item.component'
 import './main-menu.styles.scss'
 import shirts from '../../assets/shirts.jpg'
 import pants from '../../assets/pants.jpg'
@@ -19,39 +19,35 @@ class MainMenu extends React.Component {
                 title: 'pants',
                 imgName: pants,
                 id: 1,
-                linkURL:''
+                linkURL: ''
             },
 
             {
                 title: 'shirts',
                 imgName: shirts,
                 id: 2,
-                linkURL:'',
+                linkURL: '',
 
-                
             },
             {
                 title: 'hats',
                 imgName: hats,
                 id: 14,
-                linkURL:'hats',
-
+                linkURL: 'hats',
             },
             {
                 title: 'men',
                 imgName: male,
                 id: 12,
-                size:'large',
-                linkURL:'',
-
+                size: 'large',
+                linkURL: '',
             },
             {
                 title: 'women',
                 imgName: female,
                 id: 6,
                 size: 'large',
-                linkURL:'',
-
+                linkURL: '',
             }
             ]
 
@@ -69,7 +65,6 @@ class MainMenu extends React.Component {
                 })}
             </div>
         )
-
     }
 }
 
