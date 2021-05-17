@@ -4,10 +4,10 @@ import CustomButton from '../custome-button/custom-button.component';
 import { auth, SignInWithGoogle } from '../../firebase/firebaseConfig';
 import './sign-in.styles.scss'
 
-class Signin extends React.Component {
 
+// Has a state to manage the form 
+class SignIn extends React.Component {
     constructor(props) {
-
         super(props);
 
         this.state = ({
@@ -16,14 +16,12 @@ class Signin extends React.Component {
         })
     }
 
-
+// method to handle the form submition
     handleSubmit = async event => {
-
         event.preventDefault();
         const { email, password } = this.state;
 
         try {
-
             await auth.signInWithEmailAndPassword(email, password);
             this.setState({ email: '', password: '' });
 
@@ -48,15 +46,30 @@ class Signin extends React.Component {
             <div className="signin">
                 <h1>Please login</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <FormInput handleChange={this.handleChange} label="email" type="email" name="email" value={this.state.email} required />
-                    <FormInput handleChange={this.handleChange} label="password" type="password" name="password" value={this.state.password} required />
-                    <CustomButton type="submit"> Login</CustomButton>
-                    <CustomButton className="g-button" onClick={SignInWithGoogle} > Login With Google</CustomButton>
 
+                    <FormInput handleChange={this.handleChange} 
+                    value={this.state.email}
+                    label="email"
+                    type="email"
+                    name="email"
+                    required 
+                    />
+
+                    <FormInput handleChange={this.handleChange}
+                    value={this.state.password}
+                    label="password"
+                    type="password"
+                    name="password"
+                    required
+                     />
+
+                    <CustomButton type="submit"> Login</CustomButton>
+                    <CustomButton className="g-button"
+                     onClick={SignInWithGoogle} > Login With Google</CustomButton>
                 </form>
             </div>
         )
     }
 }
 
-export default Signin
+export default SignIn

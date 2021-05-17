@@ -5,8 +5,6 @@ const CustomButton = ({ children, ...otherProps }) => {
     return (
         <button className="custom-button" {...otherProps}>
             {children}
-        </button>
-    )
+        </button>)
 }
-
 export default CustomButton;
