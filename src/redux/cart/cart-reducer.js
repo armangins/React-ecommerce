@@ -3,7 +3,7 @@ import {addItemToCart} from '../../redux/cart/cart.utils';
 
 const INIT_STATE = {
     hidden: true,
-    cartItem : []
+    cartItems : []
 };
 
 const cartReducer =(state= INIT_STATE,action)=>{
@@ -18,7 +18,7 @@ const cartReducer =(state= INIT_STATE,action)=>{
            case CartType.ADD_ITEM_TO_CART:
                return{
                    ...state,
-                   cartItem : addItemToCart(state.cartItem,action.payload),
+                   cartItems : addItemToCart(state.cartItems,action.payload),
                }
 
            default :
