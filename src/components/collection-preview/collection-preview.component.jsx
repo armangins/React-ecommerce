@@ -8,12 +8,12 @@ const CollectionPreview = ({ title, items }) => {
         <div className="collection-preview">
             <h1 className="title">{title}</h1>
             <div className="preview">
-                {items.filter((items, index) => index < 4).map(({ id, ...itemProps }) => {
+                {items.filter((items, index) => index < 4).map((item) => {
                     return(
                         
                         <CollectionItem 
-                        key={id}
-                         { ...itemProps }
+                        key={item.id}
+                         item={item}
                          />
                     )
                 })}
@@ -22,4 +22,4 @@ const CollectionPreview = ({ title, items }) => {
     )
 }
 
-export default CollectionPreview
+export default CollectionPreview 
