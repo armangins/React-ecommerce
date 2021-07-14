@@ -1,10 +1,11 @@
 import "./App.css";
 import React from "react";
-import HomePage from "./Pages/homepage/homepage.component";
-import ShopPage from "./Pages/shopPage/shop-page.component";
+import HomePage from "../src/components/page-components/home-page/home.component";
+import ShopPage from "../src/components/page-components/shop-page/shop.component";
+import AuthPage from "../src/components/page-components/auth-page/auth.component";
+import CheckOut from "../src/components/page-components/checkout-page/checkout.component";
 import Header from "./components/header-component/header.component";
-import AuthPage from "./Pages/authPage/auth.component";
-import CheckOut from "./Pages/checkOutPage/checkout.component";
+
 import { auth, createUserDoc } from "./firebase/firebaseConfig";
 import { Redirect, Route, Switch } from "react-router";
 import { connect } from "react-redux";
