@@ -2,6 +2,7 @@ const CartType = {
   ADD_ITEM_TO_CART: "ADD_ITEM_TO_CART",
   TOGGLE_HIDDEN: "TOGGLE_CART_HIDDEN",
   CLEAR_CART_ITEM: "CLEAR_CART_ITEM",
+  REMOVE_ITEM: "REMOVE_ITEM",
 };
 
 export default CartType;
