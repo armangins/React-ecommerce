@@ -8,7 +8,7 @@ const CollectionItem = ({ item, addItem }) => {
 
     const { id, name, price, imageUrl } = item;
     return (
-        <div className="collection-item">
+        <div id={id} className="collection-item">
             <div className="image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
             <div className="collection-footer">
                 <span className="name">{name.toUpperCase()}</span>
