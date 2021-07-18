@@ -1,71 +1,30 @@
 import React from 'react';
-import MenuItem from './menu-item/menu-item.component'
-import './main-menu.styles.scss'
-import shirts from '../../assets/shirts.jpg'
-import pants from '../../assets/pants.jpg'
-import hats from '../../assets/hats.jpg'
-import male from '../../assets/male.jpg'
-import female from '../../assets/female.jpg'
+import MenuItem from './menu-item/menu-item.component';
+import './main-menu.styles.scss';
+
+import { createStructuredSelector } from 'reselect';
+import { selectMenuSections } from '../../redux/menu/menu-selector'
+import { connect } from 'react-redux';
 
 
-class MainMenu extends React.Component {
+const MainMenu = ({sections}) => {
 
-    constructor() {
-        super()
+    return (
+        <div className="main-menu">
+            {sections.map(({ id, ...sectionProps }) => {
+                return (
+                    <MenuItem key={id} {...sectionProps} />
+                )
+            })}
+        </div>
+    )
 
-        this.state = {
-
-            sections: [{
-                title: 'pants',
-                imgName: pants,
-                id: 1,
-                linkURL: ''
-            },
-
-            {
-                title: 'shirts',
-                imgName: shirts,
-                id: 2,
-                linkURL: '',
-
-            },
-            {
-                title: 'hats',
-                imgName: hats,
-                id: 14,
-                linkURL: 'hats',
-            },
-            {
-                title: 'men',
-                imgName: male,
-                id: 12,
-                size: 'large',
-                linkURL: '',
-            },
-            {
-                title: 'women',
-                imgName: female,
-                id: 6,
-                size: 'large',
-                linkURL: '',
-            }
-            ]
-
-        }
-    }
-
-
-    render() {
-        return (
-            <div className="main-menu">
-                {this.state.sections.map(({ id, ...sectionProps }) => {
-                    return (
-                        <MenuItem key={id} {...sectionProps} />
-                    )
-                })}
-            </div>
-        )
-    }
 }
 
-export default MainMenu
+const mapStateToProps = createStructuredSelector({
+    sections:selectMenuSections,
+})
+
+
+
+export default connect(mapStateToProps)(MainMenu);
