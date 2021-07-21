@@ -6,39 +6,41 @@ import female from '../../assets/female.jpg';
 
 
 const INIT_STATE = {
-    sections: [{
-        title: 'pants',
-        imgName: pants,
-        id: 1,
-        linkURL: ''
-    },
+    sections: [
+        {
+            title: 'Sneakers',
+            imgName: shirts,
+            id: 2,
+            linkURL: 'shop/sneakers',
+    
+        },
 
     {
-        title: 'shirts',
+        title: 'Jackets',
         imgName: shirts,
         id: 2,
-        linkURL: '',
+        linkURL: 'shop/jackets',
 
     },
     {
-        title: 'hats',
+        title: 'Hats',
         imgName: hats,
         id: 14,
-        linkURL: 'hats',
+        linkURL: 'shop/hats',
     },
     {
-        title: 'men',
+        title: 'Men',
         imgName: male,
         id: 12,
         size: 'large',
-        linkURL: '',
+        linkURL: 'shop/mens',
     },
     {
-        title: 'women',
+        title: 'Women',
         imgName: female,
         id: 6,
         size: 'large',
-        linkURL: '',
+        linkURL: 'shop/womens',
     }
     ]
 }
