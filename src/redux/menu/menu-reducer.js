@@ -9,7 +9,7 @@ const INIT_STATE = {
     sections: [
         {
             title: 'Sneakers',
-            imgName: shirts,
+            imgName: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
             id: 2,
             linkURL: 'shop/sneakers',
     
@@ -17,7 +17,7 @@ const INIT_STATE = {
 
     {
         title: 'Jackets',
-        imgName: shirts,
+        imgName: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
         id: 2,
         linkURL: 'shop/jackets',
 

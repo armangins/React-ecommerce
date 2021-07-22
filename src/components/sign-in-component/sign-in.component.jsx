@@ -45,6 +45,8 @@ class SignIn extends React.Component {
         return (
             <div className="signin">
                 <h1>Please login</h1>
+                <span>signin into your account</span>
+
                 <form onSubmit={this.handleSubmit}>
 
                     <FormInput handleChange={this.handleChange} 
@@ -63,9 +65,11 @@ class SignIn extends React.Component {
                     required
                      />
 
-                    <CustomButton type="submit"> Login</CustomButton>
+  <div className="signin-btns">
+  <CustomButton type="submit"> Login</CustomButton>
                     <CustomButton className="g-button"
                      onClick={SignInWithGoogle} > Login With Google</CustomButton>
+  </div>
                 </form>
             </div>
         )
