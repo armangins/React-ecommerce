@@ -13,7 +13,6 @@ const MenuItem = ({ title, imgName, size, history, linkURL, match }) => (
             <span>buy now</span>
         </div>
     </div>
-
 )
 
 
