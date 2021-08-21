@@ -1,5 +1,4 @@
-import shirts from '../../assets/shirts.jpg';
-import pants from '../../assets/pants.jpg';
+
 import hats from '../../assets/hats.jpg';
 import male from '../../assets/male.jpg';
 import female from '../../assets/female.jpg';
@@ -10,7 +9,7 @@ const INIT_STATE = {
         {
             title: 'Sneakers',
             imgName: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
-            id: 2,
+            id: 72622,
             linkURL: 'shop/sneakers',
     
         },

@@ -1,4 +1,4 @@
-import react from 'react';
+
 import StripeCheckout from 'react-stripe-checkout';
 
 const StripeButton = ({ price }) => {

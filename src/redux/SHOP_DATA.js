@@ -1,60 +1,60 @@
 const SHOP_DATA = {
  hats: {
-    id: 1,
+    id: 1120088371,
     title: 'Hats',
     routeName: 'hats',
 
     items: [
       {
-        id: 1,
+        id: 1103836631,
         name: 'Brown Brim',
         imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
         price: 25
       },
       {
-        id: 2,
+        id: 3734732,
         name: 'Blue Beanie',
         imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
         price: 18
       },
       {
-        id: 3,
+        id: 3329991733,
         name: 'Brown Cowboy',
         imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
         price: 35
       },
       {
-        id: 4,
+        id: 458367,
         name: 'Grey Brim',
         imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
         price: 25
       },
       {
-        id: 5,
+        id: 5558374,
         name: 'Green Beanie',
         imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
         price: 18
       },
       {
-        id: 6,
+        id: 4566,
         name: 'Palm Tree Cap',
         imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
         price: 14
       },
       {
-        id: 7,
+        id: 119977337,
         name: 'Red Beanie',
         imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
         price: 18
       },
       {
-        id: 8,
+        id: 83311144,
         name: 'Wolf Cap',
         imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
         price: 14
       },
       {
-        id: 9,
+        id: 4441111349,
         name: 'Blue Snapback',
         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         price: 16
@@ -63,7 +63,7 @@ const SHOP_DATA = {
   },
 
  sneakers: {
-    id: 2,
+    id: 2330099232,
     title: 'Sneakers',
     routeName: 'sneakers',
     items: [
@@ -119,7 +119,7 @@ const SHOP_DATA = {
   },
 
  jackets: {
-    id: 3,
+    id: 87262633,
     title: 'Jackets',
     routeName: 'jackets',
     items: [
@@ -157,7 +157,7 @@ const SHOP_DATA = {
   },
   
  womens: {
-    id: 4,
+    id: 9937628127225214,
     title: 'Womens',
     routeName: 'womens',
     items: [
