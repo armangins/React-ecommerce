@@ -15,11 +15,18 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// checks if the user is in the data base
-// and creates new user
-export const createUserDoc = async (userAuth, additionallData) => {
-  if (!userAuth) return;
 
+
+/**
+ * The function checks if a user document exists
+ *  and creates one in case it does not exist
+ * @param  {[object]} arg1 firebase userAuth object
+ * @param  {[object]} arg2 data object
+ * @return {[object]}  retruns user ref object or return 
+ */
+export const createUserDoc = async (userAuth, additionallData) => {
+
+  if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
 
@@ -38,19 +45,23 @@ export const createUserDoc = async (userAuth, additionallData) => {
       console.log("opps there was an error");
     }
   }
-
   return userRef;
 };
 
 
+
+
+// sign out from user account
 export const signout = ()=>{
   auth.signOut()
 }
 
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
 const provider = new firebase.auth.GoogleAuthProvider();
+
+
 provider.setCustomParameters({ prompt: "select_account" });
 export const SignInWithGoogle = () => auth.signInWithPopup(provider);
 export default firebase;

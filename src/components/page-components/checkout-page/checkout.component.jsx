@@ -1,4 +1,3 @@
-
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import {
@@ -8,7 +7,6 @@ import {
 import "./checkout.styles.scss";
 import CheckoutItem from "../../checkout-item/checkout-item.component";
 import StripeButton from "../../stripe-button/stripe-button.component";
-
 
 const CheckOut = ({ cartItems, cartTotal }) => (
   <div className="checkout-page">

@@ -1,3 +1,10 @@
+
+/**
+ * [someFunction description]
+ * @param  {[array]} arg1 the cart item 
+ * @param  {[object]} arg2 item to add 
+ * @return {[array]}      cart items
+ */
 export const addItemToCart = (cartItems, itemToAdd) => {
   const exsitingItem = cartItems.find((item) => {
     return item.id === itemToAdd.id;
@@ -19,11 +26,18 @@ export const addItemToCart = (cartItems, itemToAdd) => {
   return [...cartItems, { ...itemToAdd, quantity: 1 }];
 };
 
+
+/**
+ * [someFunction description]
+ * @param  {[array]} arg1 the cart item 
+ * @param  {[object]} arg2 item to remove 
+ * @return {[array]}      cart items
+ */
+
 export const removeItem = (cartItems, itemToRemove) => {
 
   const exsitingItem = cartItems.find(
     cartItem=> cartItem.id === itemToRemove.id
-    
   );
 
   if (exsitingItem.quantity === 1) {

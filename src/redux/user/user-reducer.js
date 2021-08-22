@@ -1,5 +1,4 @@
-import  actionType from './user.type';
-
+import actionType from "./user.type";
 
 const INIT_STATE = {
   currentUser: null,

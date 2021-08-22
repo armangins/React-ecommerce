@@ -6,6 +6,15 @@ const INIT_STATE = {
   cartItems: [],
 };
 
+
+
+/**
+ * reducers that handles the actions
+ * @param  {[object]} arg1 the initial state
+ * @param  {[object]} arg2 the action to execute
+ * @return {[type]}      [description]
+ */
+
 const cartReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CartType.TOGGLE_HIDDEN:
