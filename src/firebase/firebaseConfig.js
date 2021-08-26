@@ -48,6 +48,43 @@ export const createUserDoc = async (userAuth, additionallData) => {
   return userRef;
 };
 
+export const  uploadToFirebase = async (collectionName,objectToUpload)=>{
+  const collectionRef = firestore.collection(collectionName);
+  const batch = firestore.batch()
+  console.log(collectionRef);
+  objectToUpload.forEach(object=>{
+    const newDoc = collectionRef.doc();
+    batch.set(newDoc,object)
+  })
+return await batch.commit()
+}
+
+
+
+/**
+ * The function checks if a user document exists
+ *  and creates one in case it does not exist
+ * @param  {[array]} arg1 collections array
+ * @return {[object]}  retruns object  
+ */
+export const convertToObj = (collections)=>{
+
+ const  newCollections = collections.docs.map(doc=>{
+   const {title,items} = doc.data();
+   return {
+     routeName: encodeURI(title.toLowerCase()),
+     id:doc.id,
+     title,
+     items,
+   }
+ });
+
+ 
+return newCollections.reduce((accumulator,collections)=>{
+  accumulator[collections.title.toLowerCase()] = collections;
+  return accumulator;
+},{});
+}
 
 
 
