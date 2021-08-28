@@ -1,8 +1,8 @@
-import SHOP_DATA from "../SHOP_DATA";
+
 import ShopActionsTypes from "./shop.type";
 
 const INIT_STATE = {
-  collections: SHOP_DATA,
+  collections: null,
 };
 
 
