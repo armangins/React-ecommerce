@@ -1,8 +1,7 @@
 import ShopActionsTypes from "./shop.type";
-import {firestore,convertToObj} from '../../firebase/firebaseConfig'
-
 
 export const fetchCollectionsStart = ()=>{
+    console.log('action fired')
     return {
         type:ShopActionsTypes.FETCH_START,
     }
@@ -23,18 +22,3 @@ export const fetchFailed=(error)=>{
     }
 }
 
-export const fetchCollectionsAsync = ()=>{
-
-    return dispatch=>{
-        const collectionRef = firestore.collection('collections');
-        dispatch(fetchCollectionsStart());
-
-        collectionRef.get().then(snapShot=>{
-          const collectionsObject = convertToObj(snapShot)
-          dispatch(fetchSuccess(collectionsObject));
-         
-        }).catch(error=>{
-            dispatch(fetchFailed(error));
-        })
-    }
-}

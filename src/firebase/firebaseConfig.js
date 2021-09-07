@@ -16,7 +16,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-
 /**
  * The function checks if a user document exists
  *  and creates one in case it does not exist
@@ -68,6 +67,7 @@ return await batch.commit()
  * @return {[object]}  retruns object  
  */
 export const convertToObj = (collections)=>{
+
 
  const  newCollections = collections.docs.map(doc=>{
    const {title,items} = doc.data();
