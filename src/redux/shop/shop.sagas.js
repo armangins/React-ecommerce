@@ -1,4 +1,4 @@
-import { takeEvery, call, put,takeLatest } from "@redux-saga/core/effects";
+import {  call, put,takeLatest } from "@redux-saga/core/effects";
 import ShopActionsTypes from '../shop/shop.type'
 import { firestore, convertToObj } from '../../firebase/firebaseConfig'
 import { fetchSuccess, fetchFailed } from '../shop/shop.action'
