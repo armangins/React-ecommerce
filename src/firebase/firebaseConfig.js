@@ -50,15 +50,12 @@ export const createUserDoc = async (userAuth, additionallData) => {
 export const  uploadToFirebase = async (collectionName,objectToUpload)=>{
   const collectionRef = firestore.collection(collectionName);
   const batch = firestore.batch()
-  console.log(collectionRef);
   objectToUpload.forEach(object=>{
     const newDoc = collectionRef.doc();
     batch.set(newDoc,object)
   })
 return await batch.commit()
 }
-
-
 
 /**
  * The function checks if a user document exists
@@ -86,13 +83,10 @@ return newCollections.reduce((accumulator,collections)=>{
 },{});
 }
 
-
-
 // sign out from user account
 export const signout = ()=>{
   auth.signOut()
 }
-
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

@@ -1,22 +1,18 @@
 import actionType from "./user.type";
 
-export const setCurrentUser = (user) => ({
-  type: actionType.SET_CURRENT_USER,
-  payload: user,
-});
 
 export const googleSignInStart= ()=>({
   type: actionType.GOOGLE_SIGNIN_START,
 })
 
 
-export const googleSignInSuccess = (user)=>({
-type: actionType.GOOGLE_SIGNIN_SUCCESS,
+export const signInSuccess = (user)=>({
+type: actionType.SIGNIN_SUCCESS,
 payload: user,
 })
 
-export const googleSignInFailed = (error)=>({
-  type: actionType.GOOGLE_SIGNIN_FAILED,
+export const signInFailed = (error)=>({
+  type: actionType.SIGNIN_FAILED,
   payload: error,
 })
 
@@ -27,15 +23,5 @@ export const emailSignInStart= emailAndPassword=>({
   payload: emailAndPassword,
 })
 
-
-export const emailSignInSuccess = (user)=>({
-type: actionType.EMAIL_SIGNIN_SUCCESS,
-payload: user,
-})
-
-export const emailSignInFailed = (error)=>({
-  type: actionType.EMAIL_SIGNIN_FAILED,
-  payload: error,
-})
 
 
