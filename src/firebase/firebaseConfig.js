@@ -15,7 +15,6 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-
 /**
  * The function checks if a user document exists
  *  and creates one in case it does not exist
@@ -86,6 +85,18 @@ return newCollections.reduce((accumulator,collections)=>{
 // sign out from user account
 export const signout = ()=>{
   auth.signOut()
+}
+
+export const getCurrentUser=()=>{
+
+  return new Promise((res,rej)=>{
+
+    const unsubscribeFromAuth = auth.onAuthStateChanged(user=>{
+     unsubscribeFromAuth()
+      res(user)
+    },rej)
+
+  })
 }
 
 export const auth = firebase.auth();

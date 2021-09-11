@@ -24,4 +24,10 @@ export const emailSignInStart= emailAndPassword=>({
 })
 
 
+export const checkUser =()=>{
+return{
+  type: actionType.CHECK_USER,
+}
+}
+
 

@@ -1,12 +1,9 @@
 const userActionTypes = {
-
-
     GOOGLE_SIGNIN_START: 'GOOGLE_SIGNIN_START',
     EMAIL_SIGNIN_START: 'EMAIL_SIGNIN_START',
     SIGNIN_FAILED: 'SIGNIN_FAILED',
     SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
-   
-
+    CHECK_USER: 'CHECK_USER',
 }
 
 export default userActionTypes
