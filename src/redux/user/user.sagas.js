@@ -43,6 +43,7 @@ export function* isAuth (){
     if(!userAuth) return;
     const userReff = yield call(createUserDoc, userAuth);
     const userSnapShot = yield userReff.get();
+    yield put(signInSuccess({id:userSnapShot.id,...userSnapShot.data()}) );
   } catch (error) {
     
   }
