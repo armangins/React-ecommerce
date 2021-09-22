@@ -82,20 +82,13 @@ return newCollections.reduce((accumulator,collections)=>{
 },{});
 }
 
-// sign out from user account
-export const signout = ()=>{
-  auth.signOut()
-}
-
 export const getCurrentUser=()=>{
 
   return new Promise((res,rej)=>{
-
-    const unsubscribeFromAuth = auth.onAuthStateChanged(user=>{
-     unsubscribeFromAuth()
+    const unsubscribe = auth.onAuthStateChanged(user=>{
+     unsubscribe();
       res(user)
     },rej)
-
   })
 }
 

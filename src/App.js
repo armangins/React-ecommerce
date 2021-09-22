@@ -14,14 +14,16 @@ import { checkUser } from "./redux/user/user-action";
 
 class App extends React.Component {
 
-
+unsubscribeFromAuth = null
   componentDidMount() {
     const { checkUser } = this.props;
     checkUser()
+
+    console.log(this.props.currentUser);
   }
 
   componentWillUnmount() {
- 
+ this.unsubscribeFromAuth()
   }
 
   render() {
