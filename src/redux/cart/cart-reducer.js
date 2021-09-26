@@ -7,14 +7,6 @@ const INIT_STATE = {
 };
 
 
-
-/**
- * reducers that handles the actions
- * @param  {[object]} arg1 the initial state
- * @param  {[object]} arg2 the action to execute
- * @return {[type]}      [description]
- */
-
 const cartReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CartType.TOGGLE_HIDDEN:
@@ -46,7 +38,16 @@ const cartReducer = (state = INIT_STATE, action) => {
 
     default:
       return state;
+
+      case CartType.CLEAR_CART:
+        return{
+          ...state,
+          cartItems:[],
+        }
   }
+  
 };
+
+
 
 export default cartReducer;
