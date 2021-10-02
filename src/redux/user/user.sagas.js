@@ -11,6 +11,9 @@ import {
   signInFailed,
   signoutSuccess,
   signoutFailure,
+  signUpStart,
+  signUpSucess,
+  signUpFailed,
 } from "./user-action";
 
 export function* signInWithGoogle() {
@@ -49,11 +52,11 @@ export function* isAuth() {
 }
 
 export function* googleSignInStart() {
-  yield takeLatest(userActionTypes.GOOGLE_SIGNIN_START, signInWithGoogle);
+  yield takeLatest(userActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
 export function* onEmailSignInStart() {
-  yield takeLatest(userActionTypes.EMAIL_SIGNIN_START, signInWithEmail);
+  yield takeLatest(userActionTypes.EMAIL_SIGN_IN_START, signInWithEmail);
 }
 
 export function* onCheckUser() {
@@ -61,20 +64,53 @@ export function* onCheckUser() {
 }
 
 export function* signout() {
-try {
- yield auth.signOut();
- yield (put(signoutSuccess()))
-} catch (error) {
-  yield put(signoutFailure(error))
-}
+  try {
+    yield auth.signOut();
+    yield put(signoutSuccess());
+  } catch (error) {
+    yield put(signoutFailure(error));
+  }
 }
 
 export function* onSignOut() {
   yield takeLatest(userActionTypes.SIGN_OUT_START, signout);
 }
 
+export function* signInAfterSignUp({ payload: { user, data } }) {
+
+
+
+  try {
+    // auth.signInWithEmailAndPassword(email,password);
+    const userReff = yield call(createUserDoc, user, data);
+    const userSnapShot = yield userReff.get();
+    yield put(signInSuccess({ id: userSnapShot.id, ...userSnapShot.data() }));
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
+
+export function* onSignUpSucess() {
+  yield takeLatest(userActionTypes.SIGN_UP_SUCESS, signInAfterSignUp);
+}
+
+export function* signUp({ payload: { password, email, displayName } }) {
+  try {
+    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+    yield put(signUpSucess({ user, data: { displayName } }));
+  } catch (error) {
+    yield put(signUpFailed(error));
+  }
+}
+
+export function* onSignUpStart() {
+  yield takeLatest(userActionTypes.SIGN_UP_START, signUp);
+}
+
 export function* userSagas() {
   yield all([
+    call(onSignUpSucess),
+    call(onSignUpStart),
     call(googleSignInStart),
     call(onEmailSignInStart),
     call(onCheckUser),
