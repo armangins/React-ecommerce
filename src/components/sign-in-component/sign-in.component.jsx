@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { auth, } from "../../firebase/firebaseConfig";
@@ -8,40 +8,33 @@ import { connect } from "react-redux";
 
 
 // Has a state to manage the form
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
+const  SignIn =({emailSignInStart,googleSignInStart})=>{
 
-    this.state = {
-      email: "",
-      password: "",
-    };
-  }
-
+const [userData,setUserData] = useState({email:'', password:'',})
+const {email,password} = userData
   // method to handle the form submition
-  handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const { email, password } = this.state;
-    const { emailSignInStart } = this.props;
+    const { email, password } = userData;
     emailSignInStart(email,password)
   };
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+   setUserData({...userData, [name]: value });
   };
 
-  render() {
-    const {  googleSignInStart } = this.props;
+  
+   
     return (
       <div className="signin">
         <h1>Please login</h1>
         <span>signin into your account</span>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <FormInput
-            handleChange={this.handleChange}
-            value={this.state.email}
+            handleChange={handleChange}
+            value={email}
             label="email"
             type="email"
             name="email"
@@ -49,8 +42,8 @@ class SignIn extends React.Component {
           />
 
           <FormInput
-            handleChange={this.handleChange}
-            value={this.state.password}
+            handleChange={handleChange}
+            value={password}
             label="password"
             type="password"
             name="password"
@@ -67,7 +60,6 @@ class SignIn extends React.Component {
         </form>
       </div>
     );
-  }
 }
 
 const mapDispatchToProps =dispatch => ({
