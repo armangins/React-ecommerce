@@ -14,13 +14,12 @@ const shopReducer = (state = INIT_STATE, action) => {
       };
     }
 
-
     case ShopActionsTypes.FETCH_FAILURE: {
       return {
         isFetching: false,
         ...state,
-        errorMsg:action.payload,
-      }
+        errorMsg: action.payload,
+      };
     }
 
     case ShopActionsTypes.FETCH_SUCCESS: {
@@ -28,7 +27,6 @@ const shopReducer = (state = INIT_STATE, action) => {
         ...state,
         collections: action.payload,
         isFetching: false,
-
       };
     }
     default: {

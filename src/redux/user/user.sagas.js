@@ -77,9 +77,6 @@ export function* onSignOut() {
 }
 
 export function* signInAfterSignUp({ payload: { user, data } }) {
-
-
-
   try {
     // auth.signInWithEmailAndPassword(email,password);
     const userReff = yield call(createUserDoc, user, data);

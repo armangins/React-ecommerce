@@ -1,8 +1,7 @@
-
 /**
  * [someFunction description]
- * @param  {[array]} arg1 the cart item 
- * @param  {[object]} arg2 item to add 
+ * @param  {[array]} arg1 the cart item
+ * @param  {[object]} arg2 item to add
  * @return {[array]}      cart items
  */
 export const addItemToCart = (cartItems, itemToAdd) => {
@@ -26,27 +25,25 @@ export const addItemToCart = (cartItems, itemToAdd) => {
   return [...cartItems, { ...itemToAdd, quantity: 1 }];
 };
 
-
 /**
  * [someFunction description]
- * @param  {[array]} arg1 the cart item 
- * @param  {[object]} arg2 item to remove 
+ * @param  {[array]} arg1 the cart item
+ * @param  {[object]} arg2 item to remove
  * @return {[array]}      cart items
  */
 
 export const removeItem = (cartItems, itemToRemove) => {
-
   const exsitingItem = cartItems.find(
-    cartItem=> cartItem.id === itemToRemove.id
+    (cartItem) => cartItem.id === itemToRemove.id
   );
 
   if (exsitingItem.quantity === 1) {
-    return cartItems.filter(cartItem => cartItem.id !== itemToRemove.id);
+    return cartItems.filter((cartItem) => cartItem.id !== itemToRemove.id);
   }
 
-  return cartItems.map(item =>
+  return cartItems.map((item) =>
     item.id === itemToRemove.id
-      ? { ...item, quantity: item.quantity-1 }
+      ? { ...item, quantity: item.quantity - 1 }
       : item
   );
 };

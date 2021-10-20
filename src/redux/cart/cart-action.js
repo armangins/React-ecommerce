@@ -13,14 +13,12 @@ export const addItem = (item) => {
   };
 };
 
-
 export const removeItemFromCart = (item) => {
   return {
-   type: CartType.REMOVE_ITEM,
+    type: CartType.REMOVE_ITEM,
     payload: item,
   };
 };
-
 
 export const clearItemFromCart = (item) => {
   return {
@@ -29,11 +27,8 @@ export const clearItemFromCart = (item) => {
   };
 };
 
-
-export const clearCart = ()=>{
-  return{
-    type:CartType.CLEAR_CART,
-  }
-}
-
-
+export const clearCart = () => {
+  return {
+    type: CartType.CLEAR_CART,
+  };
+};

@@ -39,7 +39,6 @@ export const signoutFailure = (error) => {
 };
 
 export const signUpStart = (userData) => {
-  
   return {
     type: actionType.SIGN_UP_START,
     payload: userData,
@@ -47,20 +46,18 @@ export const signUpStart = (userData) => {
 };
 
 export const signUpSucess = ({ user, data }) => {
-
-
   return {
     type: actionType.SIGN_UP_SUCESS,
     payload: { user, data },
   };
 };
 
-export const signUpFailed = (error)=>{
-  return{
-    type:actionType.SING_UP_FAILED,
-    payload:error
-  }
-}
+export const signUpFailed = (error) => {
+  return {
+    type: actionType.SING_UP_FAILED,
+    payload: error,
+  };
+};
 
 export const checkUser = () => {
   return {
