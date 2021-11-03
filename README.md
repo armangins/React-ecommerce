@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-![](React-ecommerce/src/assets/React%20shop.PNG)
+![](src/assets/React%20shop.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
